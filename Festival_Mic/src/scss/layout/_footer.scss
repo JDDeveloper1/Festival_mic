@@ -1,0 +1,19 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.site-footer {
+    @include m.grid(3,5rem);
+    padding: 1.5rem;
+    width: 100%;
+    background-color: v.$trans_Oscuro;
+    
+
+
+    p {
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 0;
+    }   
+
+}

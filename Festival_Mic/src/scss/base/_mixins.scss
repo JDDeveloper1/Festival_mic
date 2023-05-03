@@ -1,0 +1,57 @@
+/*  basicamente es una una pieza de codigo CSS
+    que puedes reutilizar en multiples lugares
+    en tu hoja de estilos,puede contener muchas 
+    lineas de codigo o pocas, tambien puedes
+    crear un mixis mas inteleginte donde
+    se le puede incluir parametros, argumentos y 
+    estrcturas de control como un if */
+
+@use "variables" as v;
+
+// @mixin heading ($color: blue, $border-radius: false ) { // se le puede asignar un arguemto por defecto cuando  este no se indica en scs,
+//     text-transform: uppercase;
+//     font-size: 2.4rem;
+//     color: $color;
+//     background-color: brown;
+
+//     @if $border-radius { //tambien se le puede incluir estructiras de control.
+//         border-radius: 1rem;
+//     }
+// }
+
+//medias querys
+@mixin mobil {
+    @media (min-width: v.$mobil) {
+        @content; // hace refencia al bloque cuando es llamado
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin desktopXL {
+    @media (min-width: v.$desktopXL) {
+        @content;
+    }
+}
+
+@mixin grid ($columnas, $espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

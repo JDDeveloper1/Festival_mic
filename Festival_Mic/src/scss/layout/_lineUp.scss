@@ -1,0 +1,92 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.lineup {
+    background-color: v.$rojo;
+    padding: 5rem 0;
+
+    h3,
+    P {
+        text-align: center;
+    }
+
+    .dia {
+        text-transform: uppercase;
+        margin: 3rem 0;
+    }
+}
+
+.escenario-contenedor {
+    padding: 2rem 0;
+    @include m.tablet {
+        @include m.grid(2, 5rem);
+    }
+
+    p {
+        color: v.$purpura_Claro;
+    }
+
+    .escenario {
+        padding: 2rem 0;
+        margin-top: 3rem;
+        border-radius: 1.5rem;
+        @include m.tablet {
+            margin-top: 0;
+        }
+        p {
+            &:after {
+                content: "";
+                display: block;
+                width: 7rem;
+                height: 7rem;
+                background-size: 4rem;
+                background-repeat: no-repeat;
+                background-position: center center;
+                margin: 2rem auto 0 auto;
+                border: none;
+            }
+        }
+    }
+}
+
+.horario {
+    @include m.reset-list;
+    li {
+        padding: 1.5rem;
+        font-weight: 700;
+        span {
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+    }
+
+    @include m.tablet {
+        font-size: 1.4rem;
+    }
+}
+
+.principal .nombre-escenario:after {
+    background-image: url(../img/icono_mixis.png);
+}
+
+.alterno .nombre-escenario:after {
+    background-image: url(../img/icono_volumen.png);
+}
+
+.bg-blanco {
+    background-color: v.$blanco;
+    
+    li:nth-child(odd) { // (odd: seleciona todos los que son impares)
+        background-color: darken(v.$blanco, 7%); // Darken: Es una propiedad de SASS que toma el colo y lo vuelve mas oscuro
+    }
+}
+
+.bg-oscuro {
+    background-color: v.$Oscuro;
+    color: v.$blanco;
+
+    li:nth-child(odd) {
+        background-color: darken(v.$Oscuro, 2% ) ;
+        
+    }
+}

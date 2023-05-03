@@ -1,0 +1,102 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.tickets {
+    padding: 4rem 0 ;
+    background-color: v.$rojo;
+
+    h3 {
+        text-align: center;
+    }
+
+    .contenedor-tickets {
+        @include m.tablet {
+            @include m.grid(2,5rem)
+        }
+    }
+}
+
+
+.pase {
+    &-header,
+    &-footer {
+        padding: 0.8rem;
+        p {
+            text-align: center;
+            font-weight: 600;
+            margin: 0;
+        }
+    }
+
+    &-header {
+        background-color: v.$trans_Oscuro;
+        p{
+            text-transform: uppercase;
+            font-size: 1.6rem;
+        }
+    }
+
+    &-body {
+        color: v.$transparente_Oscuro;
+        ul {
+            @include m.reset-list;
+            li,
+            :nth-child(odd){
+                background-color: v.$trans_blanco;
+                padding: 1rem;
+            }
+        }
+    }
+
+    &-footer {
+        background-color: v.$trans_Oscuro;
+        border-radius: 5%;
+        margin-bottom: 2.5rem;
+        p{
+            font-size: 2.2rem;  
+            border-radius: 5%;
+        }
+    }
+}
+
+h4 {
+    display: block;
+    margin: 0 auto;
+    color: v.$blanco;
+    text-align: center;
+    width: 25rem;
+    padding: 1.5rem ;
+    font-size: 1.8rem;
+    background-color: v.$morado_trans;
+    border-radius:1rem ;
+    text-transform: uppercase;
+}
+
+.nombre-pase {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 1.5rem 0;
+
+}
+
+.btn-comprar {
+    display: block;
+    margin:0 auto;
+    margin-top: 5rem;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: v.$trans_blanco;
+    color: v.$trans_Oscuro;
+
+    &:hover {
+        cursor: pointer;
+        background-color: v.$trans_Oscuro;
+        color: v.$trans_blanco;
+    }
+
+}
+
